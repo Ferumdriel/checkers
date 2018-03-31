@@ -33,11 +33,11 @@ public class Board {
 
     public String getBoardState(){
         StringBuilder printBoard = new StringBuilder();
-        for(int i = 0; i < boardMatrix.length; i++){
-            for(int j = 0; j < boardMatrix[i].length; j++){
-                if(boardMatrix[i][j]==null){
+        for (Field[] row : boardMatrix) {
+            for (Field fieldInRow : row) {
+                if (fieldInRow == null) {
                     printBoard.append("z");
-                }else{
+                } else {
                     printBoard.append("X");
                 }
             }
