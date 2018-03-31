@@ -19,7 +19,7 @@ public class Board {
         Field[][] tmpBoard = new Field[height][width];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                tmpBoard[i][j] = new Field();
+                tmpBoard[i][j] = new Field(i,j);
             }
         }
         return tmpBoard;
