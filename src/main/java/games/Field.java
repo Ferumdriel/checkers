@@ -14,14 +14,14 @@ public class Field {
     }
 
     public void freeField(){
-        pawn.setPosition(null);
+        pawn.setField(null);
         pawn = null;
         currentMarker = Marker.FREE;
     }
 
     public void takeField(Pawn pawn){
         this.pawn = pawn;
-        pawn.setPosition(position);
+        pawn.setField(this);
         currentMarker = Marker.PAWN;
     }
 

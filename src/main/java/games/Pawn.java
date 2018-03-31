@@ -1,12 +1,13 @@
 package games;
 
 public class Pawn {
-    private Position position;
+    private Field field;
 
     public Pawn() {
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+
+    public void setField(Field field) {
+        this.field = field;
     }
 }
