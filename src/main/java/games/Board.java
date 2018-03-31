@@ -32,17 +32,17 @@ public class Board {
     }
 
     public String getBoardState(){
-        StringBuilder printBoard = new StringBuilder();
+        StringBuilder visualisedMatrix = new StringBuilder();
         for (Field[] row : boardMatrix) {
             for (Field fieldInRow : row) {
                 if (fieldInRow == null) {
-                    printBoard.append("z");
+                    visualisedMatrix.append("z");
                 } else {
-                    printBoard.append("X");
+                    visualisedMatrix.append("X");
                 }
             }
-            printBoard.append("\n");
+            visualisedMatrix.append("\n");
         }
-        return printBoard.toString();
+        return visualisedMatrix.toString();
     }
 }
