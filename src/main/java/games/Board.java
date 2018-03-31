@@ -12,11 +12,23 @@ public class Board {
     public Board(int height, int width){
         this.height = height;
         this.width = width;
-        boardMatrix = initializeField();
+        boardMatrix = initializeField(height, width);
     }
 
-    private Field[][] initializeField(){
-        return new Field[height][width];
+    private Field[][] initializeField(int height, int width) {
+        Field[][] tmpBoard = new Field[height][width];
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                tmpBoard[i][j] = new Field();
+            }
+        }
+        return tmpBoard;
+    }
+
+    public void placePawns(){
+        for(int i = 0; i < width; i += 2){
+            boardMatrix[height-1][i].takeField(new Pawn());
+        }
     }
 
     public int getHeight() {
@@ -35,10 +47,10 @@ public class Board {
         StringBuilder visualisedMatrix = new StringBuilder();
         for (Field[] row : boardMatrix) {
             for (Field fieldInRow : row) {
-                if (fieldInRow == null) {
-                    visualisedMatrix.append("z");
-                } else {
+                if (fieldInRow.isFieldTaken()) {
                     visualisedMatrix.append("X");
+                } else {
+                    visualisedMatrix.append("z");
                 }
             }
             visualisedMatrix.append("\n");
