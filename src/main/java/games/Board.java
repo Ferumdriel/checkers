@@ -25,6 +25,14 @@ public class Board {
         return tmpBoard;
     }
 
+    public void placePawn(Pawn pawn, Position position) throws NotAllowedMove {
+        try {
+            boardMatrix[position.getX()][position.getY()].takeField(pawn);
+        }catch(ArrayIndexOutOfBoundsException e){
+            throw new NotAllowedMove(e);
+        }
+    }
+
     public void placePawns(){
         for(int i = 0; i < width; i += 2){
             boardMatrix[height-1][i].takeField(new Pawn());
@@ -37,6 +45,10 @@ public class Board {
 
     public int getWidth() {
         return width;
+    }
+
+    public Field getField(Position position){
+        return boardMatrix[position.getX()][position.getY()];
     }
 
     public Field[][] getBoardMatrix() {

@@ -6,6 +6,9 @@ public class Pawn {
     public Pawn() {
     }
 
+    public Field getField() {
+        return field;
+    }
 
     public void setField(Field field) {
         this.field = field;

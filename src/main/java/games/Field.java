@@ -32,4 +32,8 @@ public class Field {
     public char getFieldStatus(){
         return currentMarker.getMark();
     }
+
+    public Position getPosition() {
+        return position;
+    }
 }
