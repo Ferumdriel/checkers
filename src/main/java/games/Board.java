@@ -22,6 +22,7 @@ public class Board {
                 tmpBoard[i][j] = new Field(i,j);
             }
         }
+        sout ('hehe')
         return tmpBoard;
     }
 
