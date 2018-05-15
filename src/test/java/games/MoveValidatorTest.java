@@ -25,4 +25,9 @@ class MoveValidatorTest {
         assertThrows(NotAllowedMove.class, () -> moveValidator.checkMove(MoveDirection.NE, pawn));
     }
 
+    @Test
+    void alwaysFails(){
+        assertTrue(false);
+    }
+
 }
